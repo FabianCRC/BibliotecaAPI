@@ -10,6 +10,7 @@ namespace BibliotecaAPI.Utilidades
         {
 
         }
-        public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Editorial> Editoriales { get; set; }
     }
 }

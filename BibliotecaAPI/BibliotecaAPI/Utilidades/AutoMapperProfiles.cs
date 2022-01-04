@@ -8,8 +8,13 @@ namespace BibliotecaAPI.Utilidades
     {
         public AutoMapperProfiles()
         {
+            //Mapping Categoria
             CreateMap<Categoria, CategoriaDTO>().ReverseMap();
             CreateMap<Categoria, CategoriaCreationDTO>().ReverseMap();
+            //Mapping Editorial
+            CreateMap<Editorial, EditorialDTO>().ReverseMap();
+            CreateMap<Editorial, EditorialCreationDTO>().ReverseMap();
+
         }
     }
 }

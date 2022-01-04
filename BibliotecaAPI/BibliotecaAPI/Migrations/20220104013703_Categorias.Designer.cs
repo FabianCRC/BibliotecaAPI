@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BibliotecaAPI.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20220102235959_categorias")]
-    partial class categorias
+    [Migration("20220104013703_Categorias")]
+    partial class Categorias
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,7 +37,7 @@ namespace BibliotecaAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categoria");
+                    b.ToTable("Categorias");
                 });
 #pragma warning restore 612, 618
         }
