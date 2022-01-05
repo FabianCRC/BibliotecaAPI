@@ -10,10 +10,15 @@ namespace BibliotecaAPI.Utilidades
         {
             //Mapping Categoria
             CreateMap<Categoria, CategoriaDTO>().ReverseMap();
-            CreateMap<Categoria, CategoriaCreationDTO>().ReverseMap();
+            CreateMap<Categoria, CategoriaCreationDTO>();
+
             //Mapping Editorial
             CreateMap<Editorial, EditorialDTO>().ReverseMap();
-            CreateMap<Editorial, EditorialCreationDTO>().ReverseMap();
+            CreateMap<Editorial, EditorialCreationDTO>();
+
+            //Mapping Autor
+            CreateMap<Autor, AutorDTO>().ReverseMap();
+            CreateMap<Autor, AutorCreationDTO>().ForMember(x=>x.Foto,options=>options.Ignore());
 
         }
     }

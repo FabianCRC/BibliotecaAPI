@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BibliotecaAPI.Controllers
 {
-    public class ExtendedBaseController<TCreation, TEntity, TDTO> : Controller
+    public class ExtendedBaseController<TCreation, TEntity, TDTO> : ControllerBase
         where TEntity : class, IHaveId
     {
         private readonly ApplicationDBContext applicationDBContext;

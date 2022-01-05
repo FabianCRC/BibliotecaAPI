@@ -1,3 +1,4 @@
+using BibliotecaAPI.Interfaces;
 using BibliotecaAPI.Utilidades;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDBContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("default")));
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddSingleton<IAlmacenadorArchivos, AlmacenadorDeArchivosEnLocal>();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -23,6 +26,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
 
 app.UseAuthorization();
 
