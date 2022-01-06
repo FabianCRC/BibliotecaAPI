@@ -1,9 +1,13 @@
-﻿namespace BibliotecaAPI.DTOs
+﻿using BibliotecaAPI.ValidationAttributes;
+
+namespace BibliotecaAPI.DTOs
 {
     public class AutorCreationDTO
     {
-        public int Id { get; set; }
+    
         public string Nombre { get; set; }
+        [ExtensionValidationAttribute(new[] {"image/png","image/jpg","image/gif"})]
+        [SizeValidationAttribute(5096)]
         public IFormFile Foto { get; set; }
     }
 }
